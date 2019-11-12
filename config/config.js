@@ -1,21 +1,20 @@
-require("dotenv").config();
-
-module.exports = {
-  development: {
-    username: "root",
-    password: "korea7601!",
-    database: "nodebird",
-    host: "127.0.0.1",
-    dialect: "mysql",
-    operatorsAliases: false
-  },
-  production: {
-    username: "root",
-    password: "korea7601!",
-    database: "nodebird",
-    host: "localhost",
-    dialect: "mysql",
-    operatorsAliases: false,
-    logging: false
-  }
-};
+module.exports = (sequelize, DataTypes) =>
+  sequelize.define(
+    "post",
+    {
+      content: {
+        type: DataTypes.STRING(140),
+        allowNull: false
+      },
+      img: {
+        type: DataTypes.STRING(200),
+        allowNull: true
+      }
+    },
+    {
+      timestamps: true,
+      paranoid: true,
+      charset: "utf8",
+      collate: "utf8_general_ci"
+    }
+  );
