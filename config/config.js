@@ -3,7 +3,7 @@ require("dotenv").config();
 module.exports = {
   development: {
     username: "root",
-    password: null,
+    password: "korea7601!",
     database: "nodebird",
     host: "127.0.0.1",
     dialect: "mysql",
@@ -11,10 +11,11 @@ module.exports = {
   },
   production: {
     username: "root",
-    password: null,
+    password: "korea7601!",
     database: "nodebird",
-    host: "127.0.0.1",
+    host: "localhost",
     dialect: "mysql",
-    operatorsAliases: false
+    operatorsAliases: false,
+    logging: false
   }
 };
